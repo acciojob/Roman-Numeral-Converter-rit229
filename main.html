@@ -9,6 +9,21 @@
 <body>
 	<!-- the entire body must be written by student -->
     <script type="text/javascript" src="./script.js">
+		let result = '';
+
+    for (let i = 0; i < romanMappings.length; i++) {
+        while (num >= romanMappings[i][1]) {
+            result += romanMappings[i][0]; // Append the Roman numeral
+            num -= romanMappings[i][1]; // Subtract the value
+        }
+    }
+
+    return result; // Return the final Roman numeral
+}
+
+// Test your function
+console.log(convertToRoman(14)); // Should output XIV
+console.log(convertToRoman(798)); // Should output DCCXCVIII
    </script>
 
 </body>
