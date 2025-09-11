@@ -9,7 +9,20 @@
 <body>
 	<!-- the entire body must be written by student -->
     <script type="text/javascript" src="./script.js">
-		let result = '';
+		// Define the romanMappings
+const romanMappings = [
+    ['M', 1000], 
+    ['D', 500], 
+    ['C', 100], 
+    ['L', 50], 
+    ['X', 10], 
+    ['V', 5], 
+    ['I', 1]
+];
+
+// Function to convert number to Roman numeral
+function convertToRoman(num) {
+    let result = '';
 
     for (let i = 0; i < romanMappings.length; i++) {
         while (num >= romanMappings[i][1]) {
@@ -22,8 +35,8 @@
 }
 
 // Test your function
-console.log(convertToRoman(14)); 
-console.log(convertToRoman(798)); 
+console.log(convertToRoman(14)); // Output: XIV
+console.log(convertToRoman(798)); // Output: DCCXCVIII 
    </script>
 
 </body>
