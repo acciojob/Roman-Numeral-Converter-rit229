@@ -20,23 +20,24 @@ const romanMappings = [
     ['I', 1]
 ];
 
-// Function to convert number to Roman numeral
+// Step 2: Create a function to convert number to Roman numeral
 function convertToRoman(num) {
-    let result = '';
+    let result = ''; // Step 3: Initialize an empty string for the result
 
+    // Step 4: Loop through the mappings
     for (let i = 0; i < romanMappings.length; i++) {
         while (num >= romanMappings[i][1]) {
-            result += romanMappings[i][0];
-            num -= romanMappings[i][1]; 
+            result += romanMappings[i][0]; // Append the Roman numeral
+            num -= romanMappings[i][1]; // Subtract the value
         }
     }
 
-    return result; 
+    return result; // Step 5: Return the final Roman numeral string
 }
 
-// Test your function
-console.log(convertToRoman(14)); // Output: XIV
-console.log(convertToRoman(798)); // Output: DCCXCVIII 
+// Testing the function
+console.log(convertToRoman(14));  // Output: XIV
+console.log(convertToRoman(798));  // Output: DCCXCVIII
    </script>
 
 </body>
