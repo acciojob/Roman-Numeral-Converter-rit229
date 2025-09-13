@@ -1,56 +1,52 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Roman Numeral Converter</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
+    <h1>Roman Numeral Converter</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number" />
+    <button id="convertButton">Convert to Roman</button>
+    <div id="result"></div>
+
     <script type="text/javascript" src="./script.js">
-		// Define the romanMappings
-const romanMappings = [
-    ['M', 1000], 
-    ['D', 500], 
-    ['C', 100], 
-    ['L', 50], 
-    ['X', 10], 
-    ['V', 5], 
-    ['I', 1]
-];
+        // Define the romanMappings
+        const romanMappings = [
+            ['M', 1000], 
+            ['D', 500], 
+            ['C', 100], 
+            ['L', 50], 
+            ['X', 10], 
+            ['V', 5], 
+            ['I', 1]
+        ];
 
-// Step 2: Create a function to convert number to Roman numeral
-function convertToRoman(num) {
-	// Step 6: Input validation
-    if (num <= 0 || num >= 100000 || !Number.isInteger(num)) {
-        return "Input must be a positive integer between 1 and 99999.";
-    }
-    let result = ''; // Step 3: Initialize an empty string for the result
+        // Step 2: Create a function to convert number to Roman numeral
+        function convertToRoman(num) {
+            // Step 6: Input validation
+            if (num <= 0 || num >= 100000 || !Number.isInteger(num)) {
+                return "Input must be a positive integer between 1 and 99999.";
+            }
+            let result = ''; // Step 3: Initialize an empty string for the result
 
-    // Step 4: Loop through the mappings
-    for (let i = 0; i < romanMappings.length; i++) {
-        while (num >= romanMappings[i][1]) {
-            result += romanMappings[i][0]; // Append the Roman numeral
-            num -= romanMappings[i][1]; // Subtract the value
+            // Step 4: Loop through the mappings
+            for (let i = 0; i < romanMappings.length; i++) {
+                while (num >= romanMappings[i][1]) {
+                    result += romanMappings[i][0]; // Append the Roman numeral
+                    num -= romanMappings[i][1]; // Subtract the value
+                }
+            }
+
+            return result; // Step 5: Return the final Roman numeral string
         }
-    }
 
-    return result; // Step 5: Return the final Roman numeral string
-}
-
-// Testing the function
-console.log(convertToRoman(14));  // Output: XIV
-console.log(convertToRoman(798));  // Output: DCCXCVIII
-		console.log(convertToRoman(0));
-		// Event listener for the button
+        // Event listener for the button
         document.getElementById('convertButton').addEventListener('click', function() {
             const inputNumber = parseInt(document.getElementById('numberInput').value);
             const output = convertToRoman(inputNumber);
             document.getElementById('result').innerText = output; // Display the result
         });
-   </script>
-
+    </script>
 </body>
-
 </html>
