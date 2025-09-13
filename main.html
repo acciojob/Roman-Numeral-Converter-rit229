@@ -43,6 +43,12 @@ function convertToRoman(num) {
 console.log(convertToRoman(14));  // Output: XIV
 console.log(convertToRoman(798));  // Output: DCCXCVIII
 		console.log(convertToRoman(0));
+		// Event listener for the button
+        document.getElementById('convertButton').addEventListener('click', function() {
+            const inputNumber = parseInt(document.getElementById('numberInput').value);
+            const output = convertToRoman(inputNumber);
+            document.getElementById('result').innerText = output; // Display the result
+        });
    </script>
 
 </body>
