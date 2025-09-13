@@ -45,7 +45,16 @@
         document.getElementById('convertButton').addEventListener('click', function() {
             const inputNumber = parseInt(document.getElementById('numberInput').value);
             const output = convertToRoman(inputNumber);
-            document.getElementById('result').innerText = output; // Display the result
+            
+            // Check if the output is an error message
+            if (output.startsWith("Input")) {
+                document.getElementById('result').innerText = output; // Display error message
+            } else {
+                document.getElementById('result').innerText = `Roman Numeral: ${output}`; // Display result
+            }
+            
+            // Clear the input field
+            document.getElementById('numberInput').value = '';
         });
     </script>
 </body>
